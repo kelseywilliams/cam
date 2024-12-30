@@ -7,11 +7,13 @@ services:
         networks:
             - site
         ports:
+            - 80:80
             - 1935:1935
         volumes:
-            - ./prod.conf:/etc/nginx/nginx.conf:ro
-            - /etc/letsencrypt/live/kelseywilliams.co/privkey.pem:/etc/letsencrypt/live/kelseywilliams.co/privkey.pem:ro
-            - /etc/letsencrypt/live/kelseywilliams.co/fullchain.pem:/etc/letsencrypt/live/kelseywilliams.co/fullchain.pem:ro
+            - ./html:/usr/local/nginx/html
+            - ./prod.conf:/usr/local/nginx/conf/nginx.conf:ro
+            # - /etc/letsencrypt/live/kelseywilliams.co/privkey.pem:/etc/letsencrypt/live/kelseywilliams.co/privkey.pem:ro
+            # - /etc/letsencrypt/live/kelseywilliams.co/fullchain.pem:/etc/letsencrypt/live/kelseywilliams.co/fullchain.pem:ro
 
 networks:
     site:
