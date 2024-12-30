@@ -2,16 +2,16 @@ version: "3.8"
 
 services:
     cam:
-    image: tiangolo/nginx-rtmp
-    restart: always
-    networks:
-        - site
-    ports:
-      - 1935:1935
-    volumes:
-      - ./prod.conf:/etc/nginx/nginx.conf:ro
-      - /etc/letsencrypt/live/kelseywilliams.co/privkey.pem:/etc/letsencrypt/live/kelseywilliams.co/privkey.pem:ro
-      - /etc/letsencrypt/live/kelseywilliams.co/fullchain.pem:/etc/letsencrypt/live/kelseywilliams.co/fullchain.pem:ro
+        image: tiangolo/nginx-rtmp
+        restart: always
+        networks:
+            - site
+        ports:
+        - 1935:1935
+        volumes:
+        - ./prod.conf:/etc/nginx/nginx.conf:ro
+        - /etc/letsencrypt/live/kelseywilliams.co/privkey.pem:/etc/letsencrypt/live/kelseywilliams.co/privkey.pem:ro
+        - /etc/letsencrypt/live/kelseywilliams.co/fullchain.pem:/etc/letsencrypt/live/kelseywilliams.co/fullchain.pem:ro
 
 networks:
     site:
