@@ -7,7 +7,7 @@ services:
         networks:
             - site
         ports:
-            - 80:80
+            - 3005:80
             - 1935:1935
         volumes:
             - ./html:/usr/local/nginx/html
