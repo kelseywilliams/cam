@@ -2,7 +2,7 @@ version: "3.8"
 
 services:
     cam:
-        image: tiangolo/nginx-rtmp
+        image: alfg/nginx-rtmp
         restart: always
         networks:
             - site
